@@ -26,7 +26,7 @@ train_result = np.array(data_result)
 
 accuracy_over_units = [0]
 
-for i in range(1, 50, ):
+for i in range(1, 50):
 	# create model
 	model = Sequential()
 	model.add(Dense(i, input_dim=4, activation='relu'))
