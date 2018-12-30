@@ -26,7 +26,7 @@ train_result = np.array(data_result)
 
 accuracy_over_units = [0]
 
-for i in range(1, 50):
+for i in range(1, 50, ):
 	# create model
 	model = Sequential()
 	model.add(Dense(i, input_dim=4, activation='relu'))
@@ -36,7 +36,8 @@ for i in range(1, 50):
 				loss='binary_crossentropy',
 				metrics=['accuracy'])
 
-	model.fit(train_input, train_result, epochs=10)
+	model.fit(train_input, train_result, epochs=100)
+	print("Finished training model #" + str(i))
 	accuracy_over_units.append(model.evaluate(train_input, train_result, batch_size=512)[1])
 
 print("The size of the unit accuracy is " + str(len(accuracy_over_units)))
